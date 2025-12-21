@@ -1,0 +1,55 @@
+# Text Editor
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
+
+# Bluetooth Device MAC Addresses
+export BT_STUNNERS_MAC="C8:7B:23:CA:FD:3A"
+export BT_HD1_MAC="00:1B:66:88:05:E0"
+export BT_GLOVE80_MAC="C8:59:D4:D8:34:40"
+
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
+
+# AWS
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+
+# Development Vars
+export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export DOTNET_CLI_TELEMETRY_OPTOUT="1"
+export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
+export BUN_INSTALL="$XDG_DATA_HOME/bun"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export GOPATH="$XDG_DATA_HOME/go"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NUGET_PACKAGES="$XDG_DATA_HOME/NuGetPackages"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
+
+# Ollama Vars
+# export ROCM_PATH=/opt/rocm
+# export HSA_OVERRIDE_GFX_VERSION=11.0.0
+
+# Path modifications
+export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/.dotnet:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+
+# Load Secrets
+[[ -f "$HOME/.config/zsh/secrets.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/secrets.zsh"
