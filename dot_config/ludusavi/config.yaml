@@ -1,0 +1,99 @@
+---
+runtime:
+  threads: ~
+release:
+  check: true
+manifest:
+  enable: true
+language: en-US
+theme: dark
+roots: []
+redirects:
+  - kind: bidirectional
+    source: /opt/soh/Save
+    target: /home/deck/Applications/soh/Save
+backup:
+  path: /home/josh/Games/game-saves
+  ignoredGames: []
+  filter:
+    excludeStoreScreenshots: false
+    cloud:
+      exclude: true
+      epic: true
+      gog: false
+      origin: true
+      steam: true
+      uplay: true
+    ignoredPaths: []
+    ignoredRegistry: []
+  toggledPaths: {}
+  toggledRegistry: {}
+  sort:
+    key: status
+    reversed: false
+  retention:
+    full: 1
+    differential: 0
+  format:
+    chosen: simple
+    zip:
+      compression: deflate
+    compression:
+      deflate:
+        level: 6
+      bzip2:
+        level: 6
+      zstd:
+        level: 10
+  onlyConstructive: false
+restore:
+  path: /home/josh/Games/game-saves
+  ignoredGames: []
+  toggledPaths: {}
+  toggledRegistry: {}
+  sort:
+    key: status
+    reversed: false
+  reverseRedirects: false
+scan:
+  showDeselectedGames: true
+  showUnchangedGames: true
+  showUnscannedGames: true
+cloud:
+  remote:
+    Dropbox:
+      id: ludusavi-1753323172
+  path: game-saves
+  synchronize: true
+apps:
+  rclone:
+    path: /usr/bin/rclone
+    arguments: "--fast-list --ignore-checksum"
+customGames:
+  - name: Doom 3
+    integration: override
+    files:
+      - /home/josh/.local/share/dhewm3/base/savegames
+    registry: []
+    installDir: []
+    winePrefix: []
+  - name: "The Legend of Zelda: Ocarina of Time"
+    integration: override
+    files:
+      - /opt/soh/Save
+    registry: []
+    installDir: []
+    winePrefix: []
+  - name: Heroes of Might and Magic III - Complete
+    integration: override
+    files:
+      - /home/josh/Games/gog/heroes-of-might-and-magic-iii/drive_c/GOG Games/HoMM 3 Complete/Games
+    registry: []
+    installDir: []
+    winePrefix: []
+  - name: Star Fox 64
+    integration: override
+    files: []
+    registry: []
+    installDir: []
+    winePrefix: []

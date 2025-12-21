@@ -1,0 +1,14 @@
+theme = Kanagawa Dragon
+
+window-decoration = false
+confirm-close-surface = false
+clipboard-read = allow
+clipboard-write = allow
+
+window-vsync = false
+mouse-hide-while-typing = true
+scrollback-limit = 50000
+window-padding-x = 5
+window-padding-y = 3
+window-padding-balance = true
+window-padding-color = extend-always
