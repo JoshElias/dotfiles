@@ -14,8 +14,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
 # AWS
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
