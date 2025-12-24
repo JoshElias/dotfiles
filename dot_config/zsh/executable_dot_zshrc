@@ -10,7 +10,7 @@ setopt HIST_IGNORE_DUPS          # Don't record duplicates
 setopt HIST_FIND_NO_DUPS         # Don't show duplicates in search
 setopt HIST_IGNORE_SPACE         # Ignore commands starting with space
 setopt HIST_VERIFY               # Show command before executing from history
-eval "$(/home/josh/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
+eval "$(/usr/sbin/mise activate zsh)" # added by https://mise.run/zsh
 
 # Source aliases if the file exists
 [[ -f "$ZDOTDIR/aliases" ]] && source "$ZDOTDIR/aliases"
