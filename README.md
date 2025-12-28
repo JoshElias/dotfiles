@@ -9,6 +9,9 @@
 - snapper snapshots
 - limine bootloader
 
+# Chroot
+gpg --import secret-key.asc
+
 # Install Yay
 pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
