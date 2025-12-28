@@ -48,12 +48,12 @@ hyprpolkitagent
 mako
 walker-bin
 elephant-bin
-elephant-desktopapplication-bin
+elephant-desktopapplications-bin
 grim
 slurp
 swappy
 btop
-rocm-smi-git
+rocm-smi-lib
 qt6ct
 yazi
 rose-pine-hyprcursor
@@ -105,9 +105,9 @@ tidal-hifi-bin
 
 # Gaming
 mesa
-lib32_mesa
-vulkanradeon
-lib32_vulkanradeon
+lib32-mesa
+vulkan-radeon
+lib32-vulkan-radeon
 steam
 lutris
 gamemode
