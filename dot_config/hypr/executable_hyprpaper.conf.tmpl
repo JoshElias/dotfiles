@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.hostname "mojo" }}
+$bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/dark-shore.jpg
+{{ else if eq .chezmoi.hostname "daemon" }}
+$bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/desert-cave.jpg
+{{ else }}
+$bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/dark-shore.jpg
+{{ end }}
+
+preload = $bgImg
+
+{{ if eq .chezmoi.hostname "mojo" }}
+wallpaper = HDMI-A-1,$bgImg
+{{ else if eq .chezmoi.hostname "daemon" }}
+wallpaper = DP-1,$bgImg
+wallpaper = DP-2,$bgImg
+{{ end }}
