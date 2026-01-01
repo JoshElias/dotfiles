@@ -1,8 +1,10 @@
+{{ if eq .chezmoi.hostname "daemon" }}
 workspace = 1, monitor:DP-1, persistent:true, default:true
 workspace = 10, monitor:DP-2, persistent:true, default:true, layoutopt:orientation:top
+{{ end }}
 
 # Fix some dragging issues with XWayland
-windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:
+# windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:
 
 # windowrule {
 #     name = xwayland-video-bridge-fixes
