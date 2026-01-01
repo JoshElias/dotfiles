@@ -1,7 +1,7 @@
 {{ if eq .chezmoi.hostname "mojo" }}
 $bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/dark-shore.jpg
 {{ else if eq .chezmoi.hostname "daemon" }}
-$bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/desert-cave.jpg
+$bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/aurora-lake.jpg
 {{ else }}
 $bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/dark-shore.jpg
 {{ end }}
@@ -9,8 +9,20 @@ $bgImg = $XDG_CONFIG_HOME/hypr/wallpaper/dark-shore.jpg
 preload = $bgImg
 
 {{ if eq .chezmoi.hostname "mojo" }}
-wallpaper = HDMI-A-1,$bgImg
+wallpaper {
+    monitor = HDMI-A-1
+    path = $bgImg
+    fit_mode = cover
+}
 {{ else if eq .chezmoi.hostname "daemon" }}
-wallpaper = DP-1,$bgImg
-wallpaper = DP-2,$bgImg
+wallpaper {
+    monitor = DP-1
+    path = $bgImg
+    fit_mode = cover
+}
+wallpaper {
+    monitor = DP-2
+    path = $bgImg
+    fit_mode = cover
+}
 {{ end }}
