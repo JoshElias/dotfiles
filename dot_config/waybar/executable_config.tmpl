@@ -2,9 +2,8 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     {{ if eq .chezmoi.hostname "daemon" }}
-    "height": 30,
     "output": "DP-2",
-    "spacing": 4,
+    "spacing": 3,
     {{ else if eq .chezmoi.hostname "mojo" }}
     "height": 60,
     "output": "HDMI-A-1",
@@ -17,7 +16,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "tray"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "tray"],
     // Modules configuration
     // "hyprland/workspaces": {
     //     "disable-scroll": true,
