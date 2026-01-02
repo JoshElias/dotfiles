@@ -5,7 +5,6 @@
     "output": "DP-2",
     "spacing": 3,
     {{ else if eq .chezmoi.hostname "mojo" }}
-    "height": 60,
     "output": "HDMI-A-1",
     "spacing": 8,
     {{ else }}
@@ -121,7 +120,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}   {format_source}",
+        "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
