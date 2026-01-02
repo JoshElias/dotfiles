@@ -1,10 +1,13 @@
 alias vi='nvim'
 alias svi='sudoedit'
+
 alias pi='yay -S'
 alias pr='yay -R'
 alias pc='yay -Yc'
 alias pq='yay'
 alias pu='yay -Syu'
+
+alias lg='lazygit'
 alias gc='git commit -m'
 alias ga='git add'
 alias gps='git push'
@@ -21,8 +24,10 @@ alias gri='git rebase -i'
 alias gr='git rebase'
 alias gfo='git fetch origin'
 alias gfe='gfo && gpl'
+
 alias ghs='gh copilot suggest'
 alias ghe='gh copilot explain'
+
 alias dp='docker ps'
 alias dpa='docker ps -a'
 alias dvl='docker volume ls'
@@ -31,6 +36,7 @@ alias dk='docker kill'
 alias dr='docker rm'
 alias dc='docker compose'
 alias dcra='docker compose down --volumes --rmi all --remove-orphans'
+
 alias ls='eza --icons=auto --colour=auto --classify=auto'
 alias locate='plocate'
 alias cat='bat'
