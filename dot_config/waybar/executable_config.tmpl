@@ -64,8 +64,13 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+      {{ if eq .chezmoi.hostname "daemon" }}
+      "icon-size": 20,
+      {{ else if eq .chezmoi.hostname "mojo" }}
+      "icon-size": 36,
+      {{ end }}
+
+      "spacing": 10
     },
     "clock": {
         "timezone": "Canada/Eastern",
