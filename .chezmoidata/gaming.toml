@@ -1,0 +1,7 @@
+[gaming]
+packages = [
+  "steam",
+  "lutris",
+  "gamemode",
+  "ludusavi-bin",
+]

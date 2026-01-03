@@ -1,0 +1,18 @@
+[dev]
+packages = [
+  "docker",
+  "docker-buildx",
+  "docker-compose",
+  "podman",
+  "podman-desktop",
+  "mariadb",
+  "postgresql",
+  "redis",
+  "rainfrog",
+  "postman-bin",
+  "stripe-cli",
+  "ngrok",
+  "lazydocker",
+  "luarocks",
+  "code",
+]

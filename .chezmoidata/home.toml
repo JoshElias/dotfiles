@@ -1,0 +1,7 @@
+[home]
+packages = [
+  'openssh',
+  '1password-cli',
+  '1password',
+  'chezmoi',
+]

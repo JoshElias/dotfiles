@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+# 1. Configuration: Map hostnames to the TOML sections (files) you want
+{{- $host_map := dict 
+    "daemon"   (list "base" "amd" "gaming" "dev")
+    "mojo"     (list "base" "gaming")
+    "demi"     (list "base" "dev") 
+-}}
+
+# 2. Determine active sections for CURRENT host (default to 'base' if unknown)
+{{- $active_sections := get $host_map .chezmoi.hostname | default (list "base") -}}
+
+# 3. Aggregate packages
+{{- $packages := list -}}
+{{- range $section := $active_sections -}}
+  {{- $section_data := index $ $section -}}
+  
+  {{- /* Safety check: Does this section exist and have packages? */ -}}
+  {{- if and $section_data (hasKey $section_data "packages") -}}
+    {{- $packages = concat $packages $section_data.packages -}}
+  {{- end -}}
+{{- end -}}
+
+# 4. Remove duplicates
+{{- $packages = uniq $packages -}}
+
+# 5. Generate the install command
+echo "Configuring host: {{ .chezmoi.hostname }}"
+echo "Active sections: {{ $active_sections | join ", " }}"
+
+{{ if $packages -}}
+# Convert list to space-separated string
+yay -S --needed --noconfirm {{ $packages | join " " }}
+{{ else -}}
+echo "No packages defined for this host."
+{{ end -}}

@@ -1,0 +1,6 @@
+[amd]
+packages = [
+  "vulkan-radeon",
+  "lib32-vulkan-radeon",
+]
+
