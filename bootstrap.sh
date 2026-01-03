@@ -9,13 +9,13 @@ if [ -z "$USERNAME" ]; then
   exit 1
 fi
 
-echo "Installing zsh package..."
-# Install zsh from pacman
-pacman -S --needed --noconfirm zsh
+echo "Installing needed package..."
+pacman -S --needed --noconfirm zsh git base-devel
+
+ZSH_PATH="$(which zsh)"
 
 echo "Setting zsh as default shell for $USERNAME..."
-# Set zsh as the default shell
-usermod -s /usr/sbin/zsh "$USERNAME"
+chsh -s "$ZSH_PATH" "$USERNAME"
 
 echo "Creating /etc/zsh/zshenv with ZDOTDIR configuration..."
 # Create the directory if it doesn't exist
@@ -44,9 +44,26 @@ else
   echo "Warning: ./.zshenv not found in current directory. Skipping move."
 fi
 
+echo "Building and installing yay from AUR..."
+cd ~
+su - "$USERNAME" -c "
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -s  # Build only (no -i, avoids sudo need)
+"
+
+pacman -U /home/"$USERNAME"/yay/yay-*.pkg.tar.zst --noconfirm
+rm -rf /home/"$USERNAME"/yay
+echo "yay installed successfully."
+
+echo "Installing auth packages..."
+yay -S --needed --noconfirm openssh 1password-cli 1password chezmoi
+
 echo "✓ zsh installed"
 echo "✓ zsh set as default shell for $USERNAME"
 echo "✓ /etc/zsh/zshenv created with ZDOTDIR=/home/$USERNAME/.config/zsh"
 if [ -f "$TARGET_DIR/.zshenv" ]; then
   echo "✓ Local .zshenv moved to $TARGET_DIR"
 fi
+echo "✓ yay built and installed"
+echo "✓ auth packages installed"

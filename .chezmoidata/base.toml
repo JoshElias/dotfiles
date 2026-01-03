@@ -1,5 +1,8 @@
 [base]
 packages = [
+  # Core
+  "linux-headers",
+
   # Shell
   "mise",
   "starship",
