@@ -67,6 +67,8 @@ packages = [
   "gnome-themes-extra",
   "dolphin",
   "localsend-bin",
+  "runapp",
+  "tree-sitter-cli",
 
   # Authentication
   "kwallet",

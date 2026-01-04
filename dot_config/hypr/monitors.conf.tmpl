@@ -3,4 +3,6 @@ monitor = DP-1, 3840x2160@119.94, 0x0, 1, bitdepth, 10, vrr, 2
 monitor = DP-2, 2560x1440@59.95, 3840x0, 1, bitdepth, 10, transform, 3
 {{ else if eq .chezmoi.hostname "mojo" }}
 monitor = HDMI-A-1, 3840x2160@119.88, 0x0, 1, bitdepth, 10, vrr, 2
+{{ else if eq .chezmoi.hostname "demi" }}
+monitor = eDP-1, 1920x1080@60.008, 0x0, 1, bitdepth, 10
 {{ end }}
