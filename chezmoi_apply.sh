@@ -22,9 +22,11 @@ mkdir -p ~/.config/chezmoi
 if [ ! -f ~/.config/chezmoi/chezmoi.toml ]; then
   cat >~/.config/chezmoi/chezmoi.toml <<'EOF'
 [onepassword]
-type = "service"
+mode = "service"
 EOF
   echo "Created ~/.config/chezmoi/chezmoi.toml"
 else
-  echo "~/.config/chezmoi/chezmoi.toml already exists"
+  echo "$HOME/.config/chezmoi/chezmoi.toml already exists"
 fi
+
+chezmoi init --apply "JoshElias"
