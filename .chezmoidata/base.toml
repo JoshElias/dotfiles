@@ -69,6 +69,7 @@ packages = [
   "localsend-bin",
   "runapp",
   "tree-sitter-cli",
+  "impala",
 
   # Authentication
   "kwallet",
