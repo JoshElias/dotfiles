@@ -15,7 +15,13 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["clock"],
+    {{ if eq .chezmoi.hostname "demi" }}
     "modules-right": ["pulseaudio", "cpu", "memory", "battery", "tray"],
+    "spacing": 3,
+    {{ else }}
+    "modules-right": ["pulseaudio", "cpu", "memory", "tray"],
+    {{ end }}
+
     // Modules configuration
     // "hyprland/workspaces": {
     //     "disable-scroll": true,

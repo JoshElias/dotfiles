@@ -70,6 +70,7 @@ packages = [
   "runapp",
   "tree-sitter-cli",
   "impala",
+  "chromium",
 
   # Authentication
   "kwallet",
