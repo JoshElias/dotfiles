@@ -2,7 +2,6 @@
 bun = "latest"
 deno = "latest"
 go = "latest"
-lua = "5.1"
 node = "lts"
 protonge = "latest"
 rust = "latest"
