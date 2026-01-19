@@ -128,4 +128,6 @@ rainfrog
 postman-bin
 stripe-cli
 ngrok
-lazydocker
+lazydocker-bin
+lazyssh-bin
+opencode-bin
