@@ -35,7 +35,7 @@ alias dvr='docker volume rm'
 alias dk='docker kill'
 alias dr='docker rm'
 alias dc='docker compose'
-alias dcra='docker compose down --volumes --rmi all --remove-orphans'
+alias dcdra='docker compose down --volumes --rmi all --remove-orphans'
 
 alias ls='eza --icons=auto --colour=auto --classify=auto'
 alias locate='plocate'
