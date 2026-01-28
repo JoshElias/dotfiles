@@ -10,11 +10,15 @@ Host bastion-staging
 	User ec2-user
 	IdentityFile ~/.ssh/bastion-staging.pub
 	IdentitiesOnly yes
-	ForwardAgent yes
+	LocalForward 3307 ground-staging.cluster-clx0ponnomgu.us-west-2.rds.amazonaws.com:3306
+  RequestTTY no
+  SessionType none
 
 Host bastion-prod
 	HostName 54.202.126.40
 	User ec2-user
 	IdentityFile ~/.ssh/bastion-prod.pub
 	IdentitiesOnly yes
-	ForwardAgent yes
+	LocalForward 3307 ground-production.cluster-clx0ponnomgu.us-west-2.rds.amazonaws.com:3306
+  RequestTTY no
+  SessionType none
